@@ -5,8 +5,8 @@ const Calculators = () => {
     return (
         <div className="space-y-8 animate-fade-in">
             <div>
-                <h2 className="text-2xl font-bold text-slate-800">Calculadoras</h2>
-                <p className="text-slate-500">Ferramentas para te ajudar a tomar melhores decisões financeiras.</p>
+                <h2 className="text-2xl font-bold text-slate-100">Calculadoras</h2>
+                <p className="text-slate-400">Ferramentas para te ajudar a tomar melhores decisões financeiras.</p>
             </div>
 
             <Rule503020 />

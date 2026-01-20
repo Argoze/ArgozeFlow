@@ -23,43 +23,43 @@ const Rule503020 = () => {
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+        <div className="bg-slate-900 rounded-2xl shadow-lg border border-slate-800 p-6 md:p-8">
             <div className="flex items-center space-x-3 mb-8">
-                <div className="bg-blue-100 p-3 rounded-xl text-blue-600">
+                <div className="bg-blue-500/10 p-3 rounded-xl text-blue-500 border border-blue-500/20">
                     <PieChart size={24} />
                 </div>
                 <div>
-                    <h3 className="text-xl font-bold text-slate-800">Regra 50-30-20</h3>
-                    <p className="text-slate-500 text-sm">Distribua sua renda de forma inteligente.</p>
+                    <h3 className="text-xl font-bold text-slate-100">Regra 50-30-20</h3>
+                    <p className="text-slate-400 text-sm">Distribua sua renda de forma inteligente.</p>
                 </div>
             </div>
 
             <div className="mb-8">
-                <label className="block text-sm font-bold text-slate-700 mb-2">Qual é a sua Renda Mensal Líquida?</label>
+                <label className="block text-sm font-bold text-slate-400 mb-2">Qual é a sua Renda Mensal Líquida?</label>
                 <div className="relative max-w-md">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-bold">R$</span>
                     <input
                         type="number"
                         value={income}
                         onChange={handleIncomeChange}
                         placeholder="0,00"
-                        className="w-full pl-12 pr-4 py-4 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl font-bold text-slate-900 transition-all placeholder:text-slate-300"
+                        className="w-full pl-12 pr-4 py-4 bg-slate-950/50 border border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xl font-bold text-slate-100 transition-all placeholder:text-slate-700"
                     />
                 </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Needs (50%) */}
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 relative overflow-hidden group hover:border-blue-200 transition-all">
+                <div className="bg-slate-950/30 rounded-xl p-6 border border-slate-800 relative overflow-hidden group hover:border-blue-500/30 transition-all">
                     <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <ShoppingCart size={48} className="text-blue-600" />
+                        <ShoppingCart size={48} className="text-blue-500" />
                     </div>
                     <div className="relative z-10">
-                        <div className="flex items-center space-x-2 text-blue-600 font-bold mb-2">
-                            <span className="bg-blue-100 px-2 py-0.5 rounded text-xs">50%</span>
+                        <div className="flex items-center space-x-2 text-blue-400 font-bold mb-2">
+                            <span className="bg-blue-500/10 px-2 py-0.5 rounded text-xs border border-blue-500/20">50%</span>
                             <span>Necessidades</span>
                         </div>
-                        <p className="text-3xl font-bold text-slate-800">{formatCurrency(needs)}</p>
+                        <p className="text-3xl font-bold text-slate-200">{formatCurrency(needs)}</p>
                         <p className="text-xs text-slate-500 mt-2 leading-relaxed">
                             Aluguel, contas, alimentação básica, transporte. O essencial para viver.
                         </p>
@@ -68,16 +68,16 @@ const Rule503020 = () => {
                 </div>
 
                 {/* Wants (30%) */}
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 relative overflow-hidden group hover:border-purple-200 transition-all">
+                <div className="bg-slate-950/30 rounded-xl p-6 border border-slate-800 relative overflow-hidden group hover:border-purple-500/30 transition-all">
                     <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <Heart size={48} className="text-purple-600" />
+                        <Heart size={48} className="text-purple-500" />
                     </div>
                     <div className="relative z-10">
-                        <div className="flex items-center space-x-2 text-purple-600 font-bold mb-2">
-                            <span className="bg-purple-100 px-2 py-0.5 rounded text-xs">30%</span>
+                        <div className="flex items-center space-x-2 text-purple-400 font-bold mb-2">
+                            <span className="bg-purple-500/10 px-2 py-0.5 rounded text-xs border border-purple-500/20">30%</span>
                             <span>Desejos</span>
                         </div>
-                        <p className="text-3xl font-bold text-slate-800">{formatCurrency(wants)}</p>
+                        <p className="text-3xl font-bold text-slate-200">{formatCurrency(wants)}</p>
                         <p className="text-xs text-slate-500 mt-2 leading-relaxed">
                             Lazer, jantar fora, hobbies, assinaturas. O que traz felicidade mas não é vital.
                         </p>
@@ -86,16 +86,16 @@ const Rule503020 = () => {
                 </div>
 
                 {/* Savings (20%) */}
-                <div className="bg-slate-50 rounded-xl p-6 border border-slate-100 relative overflow-hidden group hover:border-green-200 transition-all">
+                <div className="bg-slate-950/30 rounded-xl p-6 border border-slate-800 relative overflow-hidden group hover:border-green-500/30 transition-all">
                     <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <TrendingUp size={48} className="text-green-600" />
+                        <TrendingUp size={48} className="text-green-500" />
                     </div>
                     <div className="relative z-10">
-                        <div className="flex items-center space-x-2 text-green-600 font-bold mb-2">
-                            <span className="bg-green-100 px-2 py-0.5 rounded text-xs">20%</span>
+                        <div className="flex items-center space-x-2 text-green-400 font-bold mb-2">
+                            <span className="bg-green-500/10 px-2 py-0.5 rounded text-xs border border-green-500/20">20%</span>
                             <span>Investimentos</span>
                         </div>
-                        <p className="text-3xl font-bold text-slate-800">{formatCurrency(savings)}</p>
+                        <p className="text-3xl font-bold text-slate-200">{formatCurrency(savings)}</p>
                         <p className="text-xs text-slate-500 mt-2 leading-relaxed">
                             Reserva de emergência, aposentadoria, pagamento de dívidas. O seu futuro.
                         </p>
