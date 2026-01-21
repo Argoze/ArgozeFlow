@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
+import { useTransactions } from '../context/TransactionContext'; // Import Hook
 import SummaryCard from '../components/dashboard/SummaryCard';
 import RecentActivity from '../components/dashboard/RecentActivity';
 import TransactionModal from '../components/dashboard/TransactionModal';
 
 const Dashboard = ({ onNavigate }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const { getSummary } = useTransactions();
+    const { income, expense, balance } = getSummary();
+
+    const formatCurrency = (value) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
 
     return (
         <div className="space-y-8 animate-fade-in">
@@ -26,9 +31,9 @@ const Dashboard = ({ onNavigate }) => {
 
             {/* Summary Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <SummaryCard title="Saldo Total" value="R$ 12.450,00" type="balance" />
-                <SummaryCard title="Receitas do Mês" value="R$ 4.200,00" type="income" />
-                <SummaryCard title="Despesas do Mês" value="R$ 1.850,00" type="expense" />
+                <SummaryCard title="Saldo Total" value={formatCurrency(balance)} type="balance" />
+                <SummaryCard title="Receitas do Mês" value={formatCurrency(income)} type="income" />
+                <SummaryCard title="Despesas do Mês" value={formatCurrency(expense)} type="expense" />
             </div>
 
             {/* Content Grid */}

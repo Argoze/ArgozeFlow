@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { TransactionProvider } from './context/TransactionContext'
 import Layout from './components/layout/Layout'
 import Dashboard from './pages/Dashboard'
 import Calculators from './pages/Calculators'
+import TransactionsPage from './pages/TransactionsPage'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard');
@@ -11,14 +13,7 @@ function App() {
       case 'dashboard':
         return <Dashboard onNavigate={setActivePage} />;
       case 'transactions':
-        return (
-          <div className="animate-fade-in">
-            <h2 className="text-2xl font-bold text-slate-800 mb-6">Transações</h2>
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-100 p-12 text-center">
-              <p className="text-slate-500 text-lg">Módulo de transações em breve.</p>
-            </div>
-          </div>
-        );
+        return <TransactionsPage />;
       case 'calculators':
         return <Calculators />;
       default:
@@ -27,9 +22,11 @@ function App() {
   };
 
   return (
-    <Layout activePage={activePage} onNavigate={setActivePage}>
-      {renderContent()}
-    </Layout>
+    <TransactionProvider>
+      <Layout activePage={activePage} onNavigate={setActivePage}>
+        {renderContent()}
+      </Layout>
+    </TransactionProvider>
   )
 }
 
