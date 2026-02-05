@@ -79,10 +79,4 @@ Em um **novo terminal** na raiz do projeto:
 
 ---
 
-## 🔮 Próximos Passos
-- [ ] Implementar Autenticação (Login/Cadastro).
-- [ ] Gráficos avançados com Recharts.
-- [ ] Dashboard de Metas Financeiras.
-
----
-*Desenvolvido por Gustavo com foco em Clean Code e Arquitetura Escalável.*
+*Desenvolvido por Gustavo Argoze.*
